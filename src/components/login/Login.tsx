@@ -18,7 +18,7 @@ const Login = () => {
   const [error, setError] = useState("");
   const handleSubmitForm=(e:FormEvent)=>{
 e.preventDefault()
-  }    
+  }               
   return (
     <div className="h-screen flex justify-center items-center">
       <Card className="w-[350px]">
@@ -39,7 +39,7 @@ e.preventDefault()
           <Button variant={"default"}>Login</Button>
           {error && <CardDescription>{error}</CardDescription>}
           <CardFooter className="flex gap-4">
-            Don't have account?
+            Dont have account?
             <Link href={"/signup"}>
               <CardTitle className="cursor-pointer hover:text-gray-700">
                 Sign Up
