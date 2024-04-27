@@ -12,6 +12,7 @@ const DashboardUi = () => {
 
   return (
     <div className="h-screen flex justify-center items-center">
+      
       <h1 className="text-black">{session?.user?.name}</h1>
       <Button onClick={hanldeSingOut}>Logout</Button>
     </div>
