@@ -12,13 +12,30 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 const Login = () => {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const handleSubmitForm=(e:FormEvent)=>{
-e.preventDefault()
-  }               
+  const handleSubmitForm = async (e: FormEvent) => {
+    e.preventDefault();
+    try {
+      const res = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+      if (res?.error) {
+        setError("Invalid email and password");
+        return;
+      }
+      // console.log(email,password)
+      router.replace("dashboard");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="h-screen flex justify-center items-center">
       <Card className="w-[350px]">

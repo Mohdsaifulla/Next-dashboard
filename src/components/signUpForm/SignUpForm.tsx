@@ -14,7 +14,7 @@ import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 
 const SignUpForm = () => {
-  const router=useRouter()
+  const router = useRouter();
   const [inputField, setInputField] = useState({
     name: "",
     email: "",
@@ -55,7 +55,7 @@ const SignUpForm = () => {
       if (res.ok) {
         const form = e.target as HTMLFormElement;
         form.reset();
-        router.push("/")
+        router.push("/");
       } else {
         console.log("signup Failed");
       }
