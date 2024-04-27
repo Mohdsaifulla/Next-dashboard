@@ -3,6 +3,7 @@ import { Button } from "../ui/button";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import SideBar from "../sideBar/SideBar";
 const DashboardUi = () => {
   const { data: session } = useSession();
 
@@ -12,7 +13,7 @@ const DashboardUi = () => {
 
   return (
     <div className="h-screen flex justify-center items-center">
-      
+      <SideBar/>
       <h1 className="text-black">{session?.user?.name}</h1>
       <Button onClick={hanldeSingOut}>Logout</Button>
     </div>
