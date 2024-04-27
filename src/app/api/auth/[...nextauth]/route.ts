@@ -38,5 +38,5 @@ export const authOption: NextAuthOptions = {
     signIn: "/",
   },
 };
-const handler = NextAuth(authOption);
+export const handler = NextAuth(authOption) as never;
 export { handler as GET, handler as POST };
