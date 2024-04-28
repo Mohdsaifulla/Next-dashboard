@@ -12,17 +12,12 @@ const DashboardUi = () => {
   };
   return (
     <div className="flex">
-      <div className="flex sm:hidden">
+      <div className="">
         {openHam && (
           <div className="sidebar" style={{ flex: "1" }}>
             <SideBar />
           </div>
         )}
-      </div>
-      <div className="hidden sm:flex">
-        <div className="" style={{ flex: "1" }}>
-          <SideBar />
-        </div>
       </div>
       <div className="main-content">
         <Header handleHam={handleHam} openHam={openHam} />

@@ -12,7 +12,7 @@ const Header = ({ handleHam, openHam }: any) => {
   return (
     <div className="h-[91px] flex justify-between items-center border px-16">
       <div className="flex relative gap-4 items-center justify-center ">
-        <div className="flex sm:hidden">
+        <div className="">
           <button onClick={handleHam} className="text-xl mx-2">
             {openHam ? <IoClose /> : <GiHamburgerMenu />}
           </button>
