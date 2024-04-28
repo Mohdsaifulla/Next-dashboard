@@ -4,10 +4,12 @@ import { signOut, useSession } from "next-auth/react";
 import { useState } from "react";
 import { IoLogOut } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
+import toast, { Toaster } from "react-hot-toast";
 export function DropdownMenuCheckboxes() {
   const { data: session } = useSession();
-
+  const notify = () => toast.success("See you soon!!!");
   const hanldeSingOut = async () => {
+    notify();
     signOut();
   };
   const [open, setOpen] = useState(false);
@@ -43,6 +45,7 @@ export function DropdownMenuCheckboxes() {
           </div>
         </div>
       )}
+      <Toaster />
     </div>
   );
 }

@@ -11,7 +11,7 @@ import {
 const Schedule = () => {
   return (
     <div>
-      <Card x-chunk="dashboard-05-chunk-1" className="lg:w-[427px] lg:h-full md:w-full md:h-full  w-full h-full p-8">
+      <Card x-chunk="dashboard-05-chunk-1" className="md:w-[427px] lg:h-full  md:h-full  w-full h-full p-8">
         <div className="flex justify-between p-2">
           <CardTitle className="text-2xl">Upcoming Shedule</CardTitle>
           <div>
@@ -19,15 +19,15 @@ const Schedule = () => {
           </div>
         </div>
         <p className="text-sm opacity-[50%] p-2">Priority</p>
-        <Card className="flex justify-between p-2">
+        <Card className="flex justify-between p-2 my-2 bg-[#FAFAFA]">
           <div>
             <h1 className="text-xl">Review candidate application</h1>
             <p className="text-xs">Today.11.30 AM</p>
           </div>
           <div>...</div>
         </Card>
-        <p className="text-sm opacity-[50%] p-2">Priority</p>
-        <Card className="flex justify-between p-2">
+        <p className="text-sm opacity-[50%] p-2">Others</p>
+        <Card className="flex justify-between p-2 my-2 bg-[#FAFAFA]">
           <div>
             <h1 className="text-xl">Interview with candidates</h1>
             <p className="text-xs">Today.10.30 AM</p>
@@ -35,7 +35,7 @@ const Schedule = () => {
           <div>...</div>
         </Card>
 
-        <Card className="flex justify-between p-2">
+        <Card className="flex justify-between p-2 bg-[#FAFAFA]">
           <div>
             <h1 className="text-xl">
               Short meeting with product designer from IT Department
@@ -45,7 +45,7 @@ const Schedule = () => {
           <div>...</div>
         </Card>
         <CardFooter className="flex items-center justify-center relative top-[50px] text-red-500 border-t">
-          <p>Create a New Schedule</p>
+          <p className="">Create a New Schedule</p>
         </CardFooter>
       </Card>
     </div>

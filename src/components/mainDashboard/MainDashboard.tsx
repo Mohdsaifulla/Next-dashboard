@@ -6,11 +6,11 @@ import UpperCard from "../upperCards/UpperCard";
 
 const MainDashboard = () => {
   return (
-    <div className="h-full w-full flex flex-col lg:flex-row gap-4 ">
+    <div className="flex flex-col lg:flex-row items-center justify-around">
       <div>
-        <h1 className="text-2xl font-bold px-2 pt-2">Dashboard</h1>
+        <h1 className="text-2xl font-bold px-8 pt-2">Dashboard</h1>
         <div>
-          <div className="flex sm:flex-row flex-col gap-8 justify-center items-center p-8">
+          <div className="flex sm:flex-row flex-col gap-4 justify-center items-center px-8 py-4">
             <UpperCard
               title={"Available Position"}
               num={"24"}
@@ -30,24 +30,28 @@ const MainDashboard = () => {
               color={"#FDEBF9"}
             />
           </div>
-          <div className="flex sm:flex-row flex-col  p-8 mx-1 gap-8 w-full justify-center items-center">
+          <div className="flex sm:flex-row flex-col  p-8 mx-1 gap-4  justify-center items-center">
             <GraphCards
-              title={"New Empoyees"}
-              num={"24"}
-              need={"4 Department"}
+              title={"Total Employees"}
+              num={"216"}
+              men={"120 Men"}
+              women={"96 Women"}
+              month={"+2% Past month"}
             />
             <GraphCards
-              title={"New Empoyees"}
-              num={"24"}
-              need={"4 Department"}
+              title={"Talent Request"}
+              num={"16"}
+              men={"6 Men"}
+              women={"10 Women"}
+              month={"+5% Past month"}
             />
           </div>
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center px-4">
             <Announcement />
           </div>
         </div>
       </div>
-      <div className="flex lg:flex-col sm:flex-row flex-col">
+      <div className="flex lg:flex-col sm:flex-row flex-col gap-8 pt-8 px-4">
         <RecentActivity />
         <Schedule />
       </div>

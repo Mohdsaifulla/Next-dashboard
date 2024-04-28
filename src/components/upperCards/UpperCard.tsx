@@ -12,8 +12,8 @@ const UpperCard = ({ title, num, need, color }: any) => {
   };
 
   return (
-    <div className={`sm:w-[204px] sm:h-[136px] w-full h-full`} style={cardStyle}>
-      <Card x-chunk="dashboard-05-chunk-1">
+    <div className={`sm:w-[204px] sm:h-[136px] w-full h-full overflow-hidden rounded-xl`} style={cardStyle}>
+      <Card x-chunk="dashboard-05-chunk-1" className="rounded-2xl">
         <CardHeader className="pb-2">
           <CardDescription>{title}</CardDescription>
           <CardTitle className="text-4xl">{num}</CardTitle>

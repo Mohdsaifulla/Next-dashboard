@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import toast, { Toaster } from "react-hot-toast";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import Link from "next/link";
@@ -18,6 +19,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const notifyLogin = () => toast.success("Hey! Welcom you are logged in");
   const handleSubmitForm = async (e: FormEvent) => {
     e.preventDefault();
     try {
@@ -26,16 +28,19 @@ const Login = () => {
         password,
         redirect: false,
       });
+
       if (res?.error) {
         setError("Invalid email and password");
         return;
       }
       // console.log(email,password)
       router.replace("dashboard");
+      notifyLogin();
     } catch (error) {
       console.log(error);
     }
   };
+
   return (
     <div className="h-screen flex justify-center items-center">
       <Card className="w-[350px]">
@@ -53,7 +58,12 @@ const Login = () => {
             placeholder="Password"
             name="password"
           />
-          <Button variant={"default"}>Login</Button>
+          <Button
+            className="bg-black text-white rounded hover:bg-white hover:text-black duration-300"
+            onClick={notifyLogin}
+          >
+            Login
+          </Button>
           {error && <CardDescription>{error}</CardDescription>}
           <CardFooter className="flex gap-4">
             Dont have account?
@@ -65,6 +75,7 @@ const Login = () => {
           </CardFooter>
         </form>
       </Card>
+      <Toaster />
     </div>
   );
 };

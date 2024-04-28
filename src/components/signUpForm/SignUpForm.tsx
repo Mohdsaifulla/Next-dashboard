@@ -12,7 +12,7 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
-
+import toast, { Toaster } from "react-hot-toast";
 const SignUpForm = () => {
   const router = useRouter();
   const [inputField, setInputField] = useState({
@@ -21,7 +21,8 @@ const SignUpForm = () => {
     password: "",
   });
   const [error, setError] = useState("");
-
+  const notify = () =>
+    toast("You are Signed Up now Please login with same detail");
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!inputField.email || !inputField.name || !inputField.password) {
@@ -55,6 +56,7 @@ const SignUpForm = () => {
       if (res.ok) {
         const form = e.target as HTMLFormElement;
         form.reset();
+        notify();
         router.push("/");
       } else {
         console.log("signup Failed");
@@ -92,7 +94,12 @@ const SignUpForm = () => {
               setInputField({ ...inputField, password: e.target.value })
             }
           />
-          <Button variant={"default"}>Sign Up</Button>
+          <Button
+            className="bg-black text-white hover:bg-white hover:text-black duration-300 rounded"
+            
+          >
+            Sign Up
+          </Button>
           {error && <CardDescription>{error}</CardDescription>}
           <CardFooter className="flex gap-4">
             Already have account
@@ -104,6 +111,7 @@ const SignUpForm = () => {
           </CardFooter>
         </form>
       </Card>
+      <Toaster />
     </div>
   );
 };

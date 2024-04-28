@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-.sidebar {
+/* .sidebar {
   width: 242px;
-}
+} */
 
 .main-content {
   flex: 5;
