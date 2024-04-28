@@ -16,8 +16,8 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 const Login = () => {
   const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("test15@gmail.com");
+  const [password, setPassword] = useState("123456");
   const [error, setError] = useState("");
   const notifyLogin = () => toast.success("Hey! Welcom you are logged in");
   const handleSubmitForm = async (e: FormEvent) => {
@@ -49,12 +49,16 @@ const Login = () => {
           <Input
             onChange={(e) => setEmail(e.target.value)}
             type="text"
+            value={email}
+            autoComplete="email"
             placeholder="Email"
             name="email"
           />
           <Input
             onChange={(e) => setPassword(e.target.value)}
             type="password"
+            autoComplete="password"
+            value={password}
             placeholder="Password"
             name="password"
           />
